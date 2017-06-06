@@ -1,0 +1,70 @@
+<?xml version="1.0" ?>
+<module>
+  <Login f="nodata">
+    <Login>
+      <Users t="dropdown" f="user nocertainty noannotation"/>
+      <Log_in  t="button" ll="Control"/>
+      <Sign_up t="button" l="signup"/>
+    </Login>
+  </Login>
+  <Control f="nodata">
+    <Control f="noscroll">
+      <Record_New_Mound t="button" f="nocertainty noannotation" l="Mound"/>
+      <autonum/>
+    </Control>
+    <search/>
+  </Control>
+  <Mound>
+    <Mound_Admin>
+      <author f="id nocertainty noannotation">
+        <str>
+          <pos>3</pos>
+          <fmt>$0</fmt>
+        </str>
+      </author>
+      <timestamp f="nocertainty noannotation"/>
+      <Mound_ID f="id nocertainty noannotation autonum">
+        <str>
+          <pos>1</pos>
+          <fmt>$0- </fmt>
+        </str>
+      </Mound_ID>
+      <Mound_Name f="id">
+        <str>
+          <pos>2</pos>
+          <fmt>$0- </fmt>
+        </str>
+      </Mound_Name>
+      <gps/>
+      <Description_of_mound_or_location/>
+      <Maximum_Height_in_m b="decimal">
+        Maximum Height (m)
+      </Maximum_Height_in_m>
+      <Minimum_Height_in_m b="decimal">
+        Minimum Height (m)
+      </Maximum_Height_in_m>
+      <Length b="decimal"/>
+      <Width b="decimal"/>
+      <Image t="camera"/>
+    </Mound_Admin>
+    <Condition>
+      <Landuse_around_Mound>
+      </Landuse_around_Mound>
+      <Landuse_on_top_of_Mound>
+      </Landuse_on_top_of_Mound>
+      <Notes_on_shape_and_dimension/>
+      <Condition>
+      </Condition>
+      <Source_of_Impact>
+      </Source_of_Impact>
+      <Robbers_trenches>
+        Robber's trenches?
+      </Robbers_trenches>
+      <Notes_on_Condition/>
+      <Detail_photo t="camera"/>
+      <Associated_material>
+      </Associated_material>
+      <Associated_features/>
+    </Condition>
+  </Mound>
+</module>
