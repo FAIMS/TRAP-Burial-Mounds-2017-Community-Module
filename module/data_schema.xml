@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='utf-8'?>
+<dataSchema>
+  <ArchaeologicalElement name="Mound">
+    <description></description>
+    <property name="Mound ID" type="measure" isIdentifier="true">
+      <description></description>
+      <formatString>$2- </formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Mound Name" type="measure" isIdentifier="true">
+      <description></description>
+      <formatString>$2- </formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Mound author" type="measure" isIdentifier="true">
+      <description></description>
+      <formatString>$2</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Mound timestamp" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Latitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Longitude" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Northing" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Easting" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Accuracy" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Description of mound or location" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Maximum Height in m" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Minimum Height in m" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Length" type="measure">
+      <description>The longest axis in the diameter</description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Width" type="measure">
+      <description>The shorter axis in diameter, if mound ellipsoid</description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Image" type="file" file="true" thumbnail="true">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Landuse around Mound" type="vocab">
+      <description>Landuse around the mound. Choose the majority landuse.</description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Annual_agriculture}
+<description></description></term>
+        <term>{Perennial_agriculture__e_g_orchard_or_vineyard_}
+<description></description></term>
+        <term>{Pasture__grassland_}
+<description></description></term>
+        <term>{Scrub}
+<description></description></term>
+        <term>{Forest}
+<description></description></term>
+        <term>{Urban__in_a_settlement_or_surrounded_by_infrastructure_}
+<description></description></term>
+        <term>{Other__explain_in_notes_}
+<description></description></term>
+      </lookup>
+    </property>
+    <property name="Landuse on top of Mound" type="vocab">
+      <description>Landuse on top of mound. Choose majority.</description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Annual_agriculture}
+<description></description></term>
+        <term>{Perennial_agriculture__e_g_orchard_or_vineyard_}
+<description></description></term>
+        <term>{Pasture__grassland_}
+<description></description></term>
+        <term>{Scrub}
+<description></description></term>
+        <term>{Forest}
+<description></description></term>
+        <term>{Urban__in_a_settlement_or_surrounded_by_infrastructure_}
+<description></description></term>
+        <term>{Other__explain_in_notes_}
+<description></description></term>
+      </lookup>
+    </property>
+    <property name="Notes on shape and dimension" type="measure">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Condition" type="vocab">
+      <description>What effect has the looting or other damage had on the archaeological potential of the mound, on scale 1 pristine - 5 extinct mound</description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{0___No_observation}
+<description></description></term>
+        <term>{1___pristine__only_superficial_or_minor_damage_}
+<description></description></term>
+        <term>{2___partially_damaged}
+<description></description></term>
+        <term>{3___damaged__up_to_50__volume_missing_or_archaeological_potential_compromised_}
+<description></description></term>
+        <term>{4___seriously_damaged___archaeological_potential_seriously_compromised_}
+<description></description></term>
+        <term>{5___near_extinct}
+<description></description></term>
+      </lookup>
+    </property>
+    <property name="Source of Impact" type="vocab">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Not_available}
+<description></description></term>
+        <term>{Agriculture}
+<description></description></term>
+        <term>{Looting}
+<description></description></term>
+        <term>{Infrastructure__road_on_or_next_to_mound_}
+<description></description></term>
+        <term>{Development__city_growth__road_building_}
+<description></description></term>
+        <term>{Other__specify_in_an_annotation__please_}
+<description></description></term>
+      </lookup>
+    </property>
+    <property name="Robbers trenches" type="vocab">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Random}
+<description></description></term>
+        <term>{Rectilinear}
+<description></description></term>
+        <term>{Variable_shapes}
+<description></description></term>
+        <term>{None_present}
+<description></description></term>
+        <term>{Other__specify_in_annotation_}
+<description></description></term>
+      </lookup>
+    </property>
+    <property name="Notes on Condition" type="measure">
+      <description>Take a detailed picture of any interesting phenomena on the mound (e.g. Robber's trenches or associated cultural material)</description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Detail photo" type="file" file="true" thumbnail="true">
+      <description></description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+    <property name="Associated material" type="vocab">
+      <description>Document material you found on the mound, use annotation and Detail photo (with scale) for additional info.</description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+      <lookup>
+        <term>{Fineware_pottery}
+<description></description></term>
+        <term>{Coarseware_pottery}
+<description></description></term>
+        <term>{Flaked_lithic}
+<description></description></term>
+        <term>{Ground_lithic}
+<description></description></term>
+        <term>{Architectural_ceramics_or_building_materials}
+<description></description></term>
+        <term>{Construction_stone}
+<description></description></term>
+        <term>{Other}
+<description></description></term>
+      </lookup>
+    </property>
+    <property name="Associated features" type="measure">
+      <description>Describe any standing features directly associated with the mound, such as a krepis, enclosure wall, later constructions, etc. List dimensions with each feature or document with images.</description>
+      <formatString>{{if $1 then $1}}{{if and($1, $2) then " " }}{{if $2 then $2}}{{if $3 then " ($3)"}}{{if between($4,0,0.49) then "??" elsif lessThan($4,1) then "?" }}</formatString>
+      <appendCharacterString> - </appendCharacterString>
+    </property>
+  </ArchaeologicalElement>
+</dataSchema>

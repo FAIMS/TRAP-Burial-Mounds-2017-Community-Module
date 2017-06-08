@@ -55,31 +55,119 @@
       <Landuse_around_Mound t="picture" f="notnull">
         <desc>Landuse around the mound. Choose the majority landuse.</desc>
         <opts>
-          <opt></opt>
+          <opt>
+            Annual agriculture
+          </opt>
+          <opt>
+            Perennial agriculture (e.g orchard or vineyard)
+          </opt>
+          <opt>
+            Pasture (grassland)
+          </opt>
+          <opt>
+            Scrub
+          </opt>
+          <opt>
+            Forest
+          </opt>
+          <opt>
+            Urban (in a settlement or surrounded by infrastructure)
+          </opt>
+          <opt>
+            Other (explain in notes)
+          </opt>
         </opts>
       </Landuse_around_Mound>
       <Landuse_on_top_of_Mound t="picture" f="notnull">
         <desc>Landuse on top of mound. Choose majority.</desc>
         <opts>
-          <opt></opt>
+          <opt>
+            Annual agriculture
+          </opt>
+          <opt>
+            Perennial agriculture (e.g orchard or vineyard)
+          </opt>
+          <opt>
+            Pasture (grassland)
+          </opt>
+          <opt>
+            Scrub
+          </opt>
+          <opt>
+            Forest
+          </opt>
+          <opt>
+            Urban (in a settlement or surrounded by infrastructure)
+          </opt>
+          <opt>
+            Other (explain in notes)
+          </opt>
         </opts>
       </Landuse_on_top_of_Mound>
       <Notes_on_shape_and_dimension/>
       <Condition t="dropdown" f="notnull">
         <desc>What effect has the looting or other damage had on the archaeological potential of the mound, on scale 1 pristine - 5 extinct mound</desc>
         <opts>
-          <opt></opt>
+          <opt>
+            0 - No observation
+          </opt>
+          <opt>
+            1 - pristine (only superficial or minor damage)
+          </opt>
+          <opt>
+            2 - partially damaged
+          </opt>
+          <opt>
+            3 - damaged (up to 50% volume missing or archaeological potential compromised)
+          </opt>
+          <opt>
+            4 - seriously damaged ( archaeological potential seriously compromised)
+          </opt>
+          <opt>
+            5 - near extinct
+          </opt>
         </opts>
       </Condition>
       <Source_of_Impact t="dropdown">
         <opts>
-          <opt></opt>
+          <opt>
+            Not available
+          </opt>
+          <opt>
+            Agriculture
+          </opt>
+          <opt>
+            Looting
+          </opt>
+          <opt>
+            Infrastructure (road on or next to mound)
+          </opt>
+          <opt>
+            Development (city growth, road building)
+          </opt>
+          <opt>
+            Other (specify in an annotation, please)
+          </opt>
         </opts>
       </Source_of_Impact>
       <Robbers_trenches t="checkbox">
         Robber's trenches?
         <opts>
-          <opt></opt>
+          <opt>
+            Random
+          </opt>
+          <opt>
+            Rectilinear
+          </opt>
+          <opt>
+            Variable shapes
+          </opt>
+          <opt>
+            None present
+          </opt>
+          <opt>
+            Other (specify in annotation)
+          </opt>
         </opts>
       </Robbers_trenches>
       <Notes_on_Condition>
@@ -89,7 +177,27 @@
       <Associated_material t="checkbox">
         <desc>Document material you found on the mound, use annotation and Detail photo (with scale) for additional info.</desc>
         <opts>
-          <opt></opt>
+          <opt>
+            Fineware pottery
+          </opt>
+          <opt>
+            Coarseware pottery
+          </opt>
+          <opt>
+            Flaked lithic
+          </opt>
+          <opt>
+            Ground lithic
+          </opt>
+          <opt>
+            Architectural ceramics or building materials
+          </opt>
+          <opt>
+            Construction stone
+          </opt>
+          <opt>
+            Other
+          </opt>
         </opts>
       </Associated_material>
       <Associated_features>
