@@ -44,9 +44,11 @@
         Minimum Height (m)
       </Minimum_Height_in_m>
       <Length b="decimal" f="notnull">
+        Length (m)
         <desc>The longest axis in the diameter</desc>
       </Length>
       <Width b="decimal">
+        Width (m)
         <desc>The shorter axis in diameter, if mound ellipsoid</desc>
       </Width>
       <Image t="camera"/>
@@ -55,25 +57,25 @@
       <Landuse_around_Mound t="picture" f="notnull">
         <desc>Landuse around the mound. Choose the majority landuse.</desc>
         <opts>
-          <opt>
+          <opt p="gallery/Around_Landuse/Agr_Seedling_9063_Overview_NW01.JPG">
             Annual agriculture
           </opt>
-          <opt>
+          <opt p="gallery/Around_Landuse/Perennial_9072_Overview_S01.JPG">
             Perennial agriculture (e.g orchard or vineyard)
           </opt>
-          <opt>
+          <opt p="gallery/Around_Landuse/Pasture_9138_Overview_S01.JPG">
             Pasture (grassland)
           </opt>
-          <opt>
+          <opt p="gallery/Around_Landuse/Scrub_9155_Overview_E01.JPG">
             Scrub
           </opt>
-          <opt>
+          <opt p="gallery/Around_Landuse/Forest_3097_Overview_W_2.JPG">
             Forest
           </opt>
           <opt>
             Urban (in a settlement or surrounded by infrastructure)
           </opt>
-          <opt>
+          <opt p="gallery/Around_Landuse/Other_3276_Overview01_N.JPG">
             Other (explain in notes)
           </opt>
         </opts>
@@ -81,25 +83,25 @@
       <Landuse_on_top_of_Mound t="picture" f="notnull">
         <desc>Landuse on top of mound. Choose majority.</desc>
         <opts>
-          <opt>
+          <opt p="gallery/Top_Landuse/Agr_6015_Overview_N.jpg">
             Annual agriculture
           </opt>
           <opt>
             Perennial agriculture (e.g orchard or vineyard)
           </opt>
-          <opt>
+          <opt p="gallery/Top_Landuse/Grassland_3315_Overview_S.JPG">
             Pasture (grassland)
           </opt>
-          <opt>
+          <opt p="gallery/Top_Landuse/Scrub_2099_Overview_W02.JPG">
             Scrub
           </opt>
-          <opt>
+          <opt p="gallery/Top_Landuse/Forest_3267_Overview_W02.dng">
             Forest
           </opt>
           <opt>
             Urban (in a settlement or surrounded by infrastructure)
           </opt>
-          <opt>
+          <opt p="gallery/Top_Landuse/Other_3276_Overview01_N.JPG">
             Other (explain in notes)
           </opt>
         </opts>

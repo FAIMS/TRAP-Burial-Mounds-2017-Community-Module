@@ -22,6 +22,7 @@
             <Login>
               <Users/>
               <Log_in/>
+              <Signup_Guide_1/>
               <Sign_up/>
             </Login>
           </Login>
@@ -137,6 +138,9 @@
         <trigger ref="Log_in">
           <label>{Log_in}</label>
         </trigger>
+        <input faims_web="true" ref="Signup_Guide_1">
+          <label/>
+        </input>
         <trigger ref="Sign_up">
           <label>{Sign_up}</label>
         </trigger>
@@ -166,7 +170,7 @@
           <group ref="Col_1" faims_style="large">
             <label/>
             <trigger ref="Search_Button">
-              <label>{Search_Button}</label>
+              <label>{Search}</label>
             </trigger>
           </group>
         </group>
@@ -244,10 +248,10 @@
           <label>{Minimum_Height__m_}</label>
         </input>
         <input faims_attribute_name="Length" faims_attribute_type="measure" ref="Length" faims_style_class="required">
-          <label>{Length}</label>
+          <label>{Length__m_}</label>
         </input>
         <input faims_attribute_name="Width" faims_attribute_type="measure" ref="Width">
-          <label>{Width}</label>
+          <label>{Width__m_}</label>
         </input>
         <select faims_sync="true" type="camera" faims_attribute_name="Image" faims_attribute_type="measure" ref="Image">
           <label>{Image}</label>
