@@ -1,0 +1,31 @@
+/****************************** SEARCH EXTENSION ******************************/
+/* Implements an extension to the search page which allows users to           */
+/* constrain their searches by current user                                   */
+/******************************************************************************/
+void search(){
+  String refEntityList  = "Control/Search/Entity_List";
+  String refSearchTerm  = "Control/Search/Search_Term";
+  String refEntityTypes = "Control/Search/Entity_Types";
+  System.out.println(userid);
+  String type = "";
+  String term = getFieldValue(refSearchTerm);
+  String searchQuery = "SELECT uuid, response "+
+                       "  FROM latestNonDeletedArchEntFormattedIdentifiers  "+
+                       " WHERE uuid in (SELECT uuid "+
+                       "                  FROM latestNonDeletedArchEntIdentifiers "+
+                       "                 WHERE measure LIKE {term}||'%'  "+
+                       "                   AND ( aenttypename = {type} OR '' = {type} ) "+
+                       "                   AND  userid = {user}" +
+                       "                )  "+
+                       " ORDER BY response "+
+                       " LIMIT ? "+
+                       "OFFSET ? ";
+  searchQuery = dbReplaceFirst(searchQuery, "{term}", term);
+  searchQuery = dbReplaceFirst(searchQuery, "{type}", type);
+  searchQuery = dbReplaceFirst(searchQuery, "{type}", type);
+  searchQuery = dbReplaceFirst(searchQuery, "{user}", userid);
+  populateCursorList(refEntityList, searchQuery, 25);
+  refreshTabgroupCSS("Control");
+
+  Log.d("Module", "Search query: " + searchQuery);
+}

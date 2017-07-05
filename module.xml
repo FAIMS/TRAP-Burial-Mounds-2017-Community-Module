@@ -72,7 +72,7 @@
           <opt p="gallery/Around_Landuse/Forest_3097_Overview_W_2.JPG">
             Forest
           </opt>
-          <opt>
+          <opt p="gallery/Around_Landuse/Urban.JPG">
             Urban (in a settlement or surrounded by infrastructure)
           </opt>
           <opt p="gallery/Around_Landuse/Other_3276_Overview01_N.JPG">
@@ -86,7 +86,7 @@
           <opt p="gallery/Top_Landuse/Agr_6015_Overview_N.jpg">
             Annual agriculture
           </opt>
-          <opt>
+          <opt p="gallery/Top_Landuse/Perennial_agriculture.jpg">
             Perennial agriculture (e.g orchard or vineyard)
           </opt>
           <opt p="gallery/Top_Landuse/Grassland_3315_Overview_S.JPG">
@@ -98,7 +98,7 @@
           <opt p="gallery/Top_Landuse/Forest_3267_Overview_W02.dng">
             Forest
           </opt>
-          <opt>
+          <opt p="gallery/Top_Landuse/Urban.JPG">
             Urban (in a settlement or surrounded by infrastructure)
           </opt>
           <opt p="gallery/Top_Landuse/Other_3276_Overview01_N.JPG">
@@ -207,4 +207,9 @@
       </Associated_features>
     </Condition>
   </Mound>
+  <logic><![CDATA[
+  <!--@SOURCE: logic/custom-search.bsh-->
+  <!--@SOURCE: logic/custom-validation.bsh-->
+  <!--@SOURCE: logic/custom-selectUser.bsh-->
+  ]]></logic>
 </module>

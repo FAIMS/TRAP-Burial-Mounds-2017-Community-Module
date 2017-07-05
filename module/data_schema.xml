@@ -83,7 +83,7 @@
       <appendCharacterString> - </appendCharacterString>
       <lookup>
         <term pictureURL="files/data/gallery/Around_Landuse/Agr_Seedling_9063_Overview_NW01.JPG">{Annual_agriculture}
-<description></description></term>
+<description ><![CDATA[<img style="width:100%" src="files/data/gallery/Around_Landuse/Agr_Seedling_9078_Overview_NW01.JPG"/>]]></description></term>
         <term pictureURL="files/data/gallery/Around_Landuse/Perennial_9072_Overview_S01.JPG">{Perennial_agriculture__e_g_orchard_or_vineyard_}
 <description></description></term>
         <term pictureURL="files/data/gallery/Around_Landuse/Pasture_9138_Overview_S01.JPG">{Pasture__grassland_}
@@ -92,7 +92,7 @@
 <description></description></term>
         <term pictureURL="files/data/gallery/Around_Landuse/Forest_3097_Overview_W_2.JPG">{Forest}
 <description></description></term>
-        <term>{Urban__in_a_settlement_or_surrounded_by_infrastructure_}
+        <term pictureURL="files/data/gallery/Around_Landuse/Urban.JPG">{Urban__in_a_settlement_or_surrounded_by_infrastructure_}
 <description></description></term>
         <term pictureURL="files/data/gallery/Around_Landuse/Other_3276_Overview01_N.JPG">{Other__explain_in_notes_}
 <description></description></term>
@@ -105,7 +105,7 @@
       <lookup>
         <term pictureURL="files/data/gallery/Top_Landuse/Agr_6015_Overview_N.jpg">{Annual_agriculture}
 <description></description></term>
-        <term>{Perennial_agriculture__e_g_orchard_or_vineyard_}
+        <term pictureURL="files/data/gallery/Top_Landuse/Perennial_agriculture.jpg">{Perennial_agriculture__e_g_orchard_or_vineyard_}
 <description></description></term>
         <term pictureURL="files/data/gallery/Top_Landuse/Grassland_3315_Overview_S.JPG">{Pasture__grassland_}
 <description></description></term>
@@ -113,7 +113,7 @@
 <description></description></term>
         <term pictureURL="files/data/gallery/Top_Landuse/Forest_3267_Overview_W02.dng">{Forest}
 <description></description></term>
-        <term>{Urban__in_a_settlement_or_surrounded_by_infrastructure_}
+        <term pictureURL="files/data/gallery/Top_Landuse/Urban.JPG">{Urban__in_a_settlement_or_surrounded_by_infrastructure_}
 <description></description></term>
         <term pictureURL="files/data/gallery/Top_Landuse/Other_3276_Overview01_N.JPG">{Other__explain_in_notes_}
 <description></description></term>
