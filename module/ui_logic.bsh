@@ -3399,8 +3399,6 @@ void showDatabaseLayerByVocabName(
 
 void showDatabaseLayerByVocabName(String vocabName, int geoColor) {
   String layerName = guessArch16nValFromKey(vocabName);
-  print(vocabName);
-  print(layerName);
   showDatabaseLayerByVocabName(vocabName, geoColor, layerName);
 }
 

@@ -186,7 +186,7 @@
         </select1>
       </group>
       <group ref="Map" faims_scrollable="false">
-        <label>{Map}</label>
+        <label/>
         <input faims_map="true" ref="Map">
           <label>{Map}</label>
         </input>
