@@ -3,7 +3,9 @@
   <Login f="nodata">
     <Login>
       <Users t="dropdown" f="user nocertainty noannotation"/>
-      <Log_in  t="button" ll="Control"/>
+      <Log_in  t="button" l="Control">
+        <!--TODO: Change to ll-->
+      </Log_in>
       <Sign_up t="button" l="signup"/>
     </Login>
   </Login>
@@ -13,7 +15,7 @@
       <autonum/>
     </Control>
     <search/>
-    <Map>
+    <Map f="noscroll">
       <Map t="map"/>
     </Map>
   </Control>
@@ -238,8 +240,8 @@ void showDatabaseLayerByVocabName(
   q += "  JOIN latestnondeletedaentvalue USING (uuid)";
   q += "  JOIN attributekey              USING (attributeid)";
   q += "  JOIN vocabulary                USING (vocabid)";
-  q += " WHERE (vocabname     = {vocabName}  OR vocabname     = '')";
-  q += "   AND (attributename = {attribName} OR attributename = '')";
+  q += " WHERE {vocabName}  IN ('', vocabname)";
+  q += "   AND {attribName} IN ('', attributename)";
   q  = dbReplaceFirst(q, "{vocabName}",  vocabName);
   q  = dbReplaceFirst(q, "{attribName}", attribName);
 
@@ -247,7 +249,12 @@ void showDatabaseLayerByVocabName(
   GeometryStyle spt = createPointStyle(10, geoColor, 0.2f, 0.5f);
   GeometryStyle sln = createLineStyle(10, geoColor, 0.05f, 0.3f, null);
   GeometryStyle spg = createPolygonStyle(10, geoColor, sln_);
-  GeometryTextStyle stx = createTextStyle(10, Color.BLACK, 40, Typeface.SANS_SERIF);
+  GeometryTextStyle stx = createTextStyle(
+      10,
+      Color.BLACK,
+      40,
+      Typeface.SANS_SERIF
+  );
 
   showDatabaseLayer(
       MAP_REF,
@@ -271,10 +278,15 @@ void showDatabaseLayerByVocabName(
 }
 
 void showDatabaseLayerByVocabName(String vocabName, int geoColor) {
-  showDatabaseLayerByVocabName(vocabName, geoColor, vocabName);
+  String layerName = guessArch16nValFromKey(vocabName);
+  showDatabaseLayerByVocabName(vocabName, geoColor, layerName);
 }
 
-showDatabaseLayerByVocabName("{Fineware_pottery}",   Color.BLUE);
-showDatabaseLayerByVocabName("{Coarseware_pottery}", Color.RED);
+void initMap() {
+  showDatabaseLayerByVocabName("{Coarseware_pottery}", Color.RED);
+  showDatabaseLayerByVocabName("{Fineware_pottery}",   Color.BLUE);
+}
+
+initMap();
   ]]></logic>
 </module>

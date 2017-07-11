@@ -42,6 +42,9 @@
               </Colgroup_0>
               <Entity_List/>
             </Search>
+            <Map>
+              <Map/>
+            </Map>
           </Control>
           <Mound>
             <Mound_Admin>
@@ -181,6 +184,12 @@
             <value>Options not loaded</value>
           </item>
         </select1>
+      </group>
+      <group ref="Map" faims_scrollable="false">
+        <label>{Map}</label>
+        <input faims_map="true" ref="Map">
+          <label>{Map}</label>
+        </input>
       </group>
     </group>
     <group ref="Mound" faims_archent_type="Mound">
