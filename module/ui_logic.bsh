@@ -1,5 +1,5 @@
 /*
- * GENERATED WITH FAIMS-TOOLS, SHA1: 5db20e25d74a6a2e4dc8f7fa389bae5b5a93b22c
+ * GENERATED WITH FAIMS-TOOLS, SHA1: f9b420b59b5ebd166d37474868b228c85ea33514
  */
 import android.util.Log;
 import android.os.Build.MODEL;
@@ -153,7 +153,6 @@ REF_TO_TYPE.put("Login/Login/Signup_Guide_1", "webview");
 REF_TO_TYPE.put("Login/Login/Sign_up", "button");
 REF_TO_TYPE.put("Control/Control/Record_New_Mound", "button");
 REF_TO_TYPE.put("Control/Control/Next_Mound_ID", "input");
-REF_TO_TYPE.put("Control/Search", "group");
 REF_TO_TYPE.put("Control/Search/Search_Term", "input");
 REF_TO_TYPE.put("Control/Search/Search_Button", "button");
 REF_TO_TYPE.put("Control/Search/Entity_List", "list");
@@ -161,10 +160,8 @@ REF_TO_TYPE.put("Mound/Mound_Admin/Mound_author", "input");
 REF_TO_TYPE.put("Mound/Mound_Admin/Mound_timestamp", "input");
 REF_TO_TYPE.put("Mound/Mound_Admin/Mound_ID", "input");
 REF_TO_TYPE.put("Mound/Mound_Admin/Mound_Name", "input");
-REF_TO_TYPE.put("Mound/Mound_Admin", "group");
 REF_TO_TYPE.put("Mound/Mound_Admin/Latitude", "input");
 REF_TO_TYPE.put("Mound/Mound_Admin/Longitude", "input");
-REF_TO_TYPE.put("Mound/Mound_Admin", "group");
 REF_TO_TYPE.put("Mound/Mound_Admin/Northing", "input");
 REF_TO_TYPE.put("Mound/Mound_Admin/Easting", "input");
 REF_TO_TYPE.put("Mound/Mound_Admin/Accuracy", "input");
@@ -187,6 +184,11 @@ REF_TO_TYPE.put("Mound/Condition/Detail_photo", "camera");
 REF_TO_TYPE.put("Mound/Condition/Detail_photo_Button_1", "button");
 REF_TO_TYPE.put("Mound/Condition/Associated_material", "checkbox");
 REF_TO_TYPE.put("Mound/Condition/Associated_features", "input");
+REF_TO_TYPE.put("Login/Login", "tab");
+REF_TO_TYPE.put("Control/Control", "tab");
+REF_TO_TYPE.put("Control/Search", "tab");
+REF_TO_TYPE.put("Mound/Mound_Admin", "tab");
+REF_TO_TYPE.put("Mound/Condition", "tab");
 
 DATA_REFS.add("Mound/Mound_Admin/Mound_author");
 DATA_REFS.add("Mound/Mound_Admin/Mound_timestamp");
@@ -438,13 +440,20 @@ String getArch16nKey(String ref) {
 }
 
 String guessArch16nVal(String ref) {
-  String arch16nKey = getArch16nKey(ref);
+  return guessArch16nValFromRef(ref);
+}
 
-  if (isNull(arch16nKey)) return "";
-  arch16nKey = arch16nKey.replaceAll("_", " ");
-  arch16nKey = arch16nKey.replaceAll("^\\{", "");
-  arch16nKey = arch16nKey.replaceAll("\\}$", "");
-  return arch16nKey;
+String guessArch16nValFromRef(String ref) {
+  String arch16nKey = getArch16nKey(ref);
+  return guessArch16nValFromKey(arch16nKey);
+}
+
+String guessArch16nValFromKey(String key) {
+  if (isNull(key)) return "";
+  key = key.replaceAll("_", " ");
+  key = key.replaceAll("^\\{", "");
+  key = key.replaceAll("\\}$", "");
+  return key;
 }
 
 String getAttributeName(String ref) {
@@ -505,9 +514,15 @@ String getArchEntTypePascalCased(String ref) {
 /*         first time the tab group is saved as well as subsequent            */
 /*         onSave(String, Boolean) calls.                                     */
 /*                                                                            */
-/* A single call to `bindOnEvents` must occur after all the `addOnEvent` and  */
-/* `delOnEvents` calls. Calling `bindOnEvents` is what actually establishes   */
-/* the bindings once they have been added to the accumulator.                 */
+/* Additionally, the binding accumulator augments the "load" event so that    */
+/* the `statement` in addOnEvent("module", "load", statement) gets executed   */
+/* after the module has finished loading. (That is, when this script has been */
+/* loaded, including the execution of any asynchronous functions.)            */
+/*                                                                            */
+/* Importantly, a single call to `bindOnEvents` must occur after all the      */
+/* `addOnEvent` and `delOnEvents` calls. Calling `bindOnEvents` is what       */
+/* actually establishes the bindings once they have been added to the         */
+/* accumulator.                                                               */
 /******************************************************************************/
 // This counts the number of _a_synchonrous jobs before the module is considered
 // to be loaded.
@@ -1236,9 +1251,12 @@ void enqueueTestFiles(String cb) {
 void enqueueTestFiles(int numFiles, String cb) {
   if (isNull(PERF_TEST_IMG)) {
     String head; String body;
-    head  = "Could Not Enqueue Test Files";
+    head  = "Record Creation Aborted";
     body  = "The master file from which test files are enqueued could not be ";
-    body += "found on disk.";
+    body += "found on disk. Record creation cannot take place unless this file";
+    body += " is present. Please ensure that your device is connected to the ";
+    body += "internet, re-load the module, and try to run a create dummy ";
+    body += "records again.";
     showWarning(head, body);
     return;
   }
@@ -1281,7 +1299,7 @@ PerfImageDownloader() {
     String filStr = "/sdcard/faims/modules/" + getModuleId() +
         "/files/app/test.jpg";
     String urlStr = "https://raw.githubusercontent.com/FAIMS/FAIMS-Tools/" +
-        "autogen-py/test-images/construction-2894x1924.jpg";
+        "master/test-images/construction-2894x1924.jpg";
 
     if (detectFile(filStr))
       return;
@@ -1477,8 +1495,10 @@ void setUpPerfActionBarItems() {
   removeActionBarItem("enable_record_creation");
 
   String userMenuTabGroup = getTabGroupRef(USER_MENU_PATH);
-  if (!isDisplayed(userMenuTabGroup))
+  if (!isDisplayed(userMenuTabGroup)) {
+    PERF_ALLOW_CREATION = false;
     return;
+  }
   if (!isInPerfTestTime())
     return;
 
@@ -1671,21 +1691,29 @@ void persistOverSessions(String ref) {
 /*                                                                            */
 /* Provides an easy way to copy field values, even between vocabs.            */
 /******************************************************************************/
+boolean isSelected(String ref, String vocabName) {
+  String vocabNameActual = getMenuValue(ref);
+
+  if (vocabNameActual == null)
+    return vocabNameActual == vocabName;
+  else
+    return vocabNameActual.equals(vocabName);
+}
+
 boolean setMenuValue(String ref, String vocabName) {
   String attrName = getAttributeName(ref);
   String vocabId = getVocabId(attrName, vocabName);
 
   if (isNull(vocabId))
     return false;
-  else {
-    setFieldValue(ref, vocabId);
-    return true;
-  }
+
+  setFieldValue(ref, vocabId);
+  return isSelected(ref, vocabName);
 }
 
-void copyFieldValue(String src, String dst) {
+boolean copyFieldValue(String src, String dst) {
   Boolean doFindVocabId = true;
-  copyFieldValue(src, dst, doFindVocabId);
+  return copyFieldValue(src, dst, doFindVocabId);
 }
 
 /* `src`           The ref of the source field.
@@ -1700,7 +1728,7 @@ void copyFieldValue(String src, String dst) {
  *                 If `doFindVocabId` is false, the value returned by
  *                 `getFieldValue` is copied, without any database accesses.
  */
-void copyFieldValue(String src, String dst, Boolean doFindVocabId) {
+boolean copyFieldValue(String src, String dst, Boolean doFindVocabId) {
   String vocabIdSrc   = getFieldValue(src);
   String vocabNameSrc = getFieldValue(src, true);
 
@@ -1709,22 +1737,15 @@ void copyFieldValue(String src, String dst, Boolean doFindVocabId) {
 
   if (attrNameSrc.equals(attrNameDst) || !doFindVocabId) {
     setFieldValue(dst, vocabIdSrc);
-    return;
+    return true;
   }
 
-  if (!setMenuValue(dst, vocabNameSrc)) {
-    // Fall back to dumb field copying
-    copyFieldValue(src, dst, false);
-  }
-}
+  if (setMenuValue(dst, vocabNameSrc))
+    return true;
 
-boolean isSelected(String ref, String vocabName) {
-  String vocabNameActual = getMenuValue(ref);
-
-  if (vocabNameActual == null)
-    return vocabNameActual == vocabName;
-  else
-    return vocabNameActual.equals(vocabName);
+  // Fall back to dumb field copying
+  copyFieldValue(src, dst, false);
+  return false;
 }
 
 void clearField(String ref) {
@@ -1735,6 +1756,16 @@ void clearField(String ref) {
   }
 }
 
+/* Copies the value from the field at `src` to the field at `dst` whenever the
+ * a new record containing `dst` is created.
+ *
+ * `doCheckParent` If this is true, the value is only copied when the parent tab
+ *                 group of the tab group referred to by `dst` is equal to the
+ *                 tab group referred to by `src`. This is a way of checking
+ *                 whether the field referred to by `src` has been loaded.
+ * `doFindVocabId` Same as the `doFindVocabId` argument for the `copyFieldValue`
+ *                 function.
+ */
 void inheritFieldValue(
     String src,
     String dst,
@@ -1818,6 +1849,28 @@ for (entry : REF_TO_TYPE.entrySet()) {
 /******************************************************************************/
 /*                              MENU POPULATION                               */
 /******************************************************************************/
+/* Deprecated: Fetches the contents of a specifed vocabulary and stores it in
+ * the given list.
+ */
+void fetchVocab(String vocabName, List storageList) {
+  fetchVocab(vocabName, storageList, null);
+}
+
+void fetchVocab(String vocabName, List storageList, String callbackFunction) {
+  fetchAll("select vocabid, vocabname from vocabulary left join attributekey using (attributeid) where attributename = '" + vocabName + "';", new FetchCallback() {
+    onFetch(result) {
+      if (isNull(result))
+        result = new ArrayList();
+
+      storageList.addAll(result);
+      Log.d("fetchVocab()", "Fetched vocabulary \"" + vocabname + "\" contents: " + result.toString());
+      if (callbackFunction != null && !isNull(callbackFunction)) {
+        execute(callbackFunction);
+      }
+    }
+  });
+}
+
 /** Wrapper for to make a vocab without an exlusion list **/
 String getMakeVocabType(String ref) {
   if (isHier(ref)) return "hierarchical" + getType(ref);
@@ -2266,7 +2319,7 @@ String getUserMenuValue(int i) {
 }
 
 void resetUser() {
-  userId   = "0";
+  userId   = "";
   username = "";
   User user = new User(userId, "", "", "", "");
   setUser(user);
@@ -2509,24 +2562,24 @@ addOnEvent("Mound", "show", "onShowMound()");
 
 
 
-void onClickControlControlRecordNewMound () {
+void onClickControlRecordNewMound () {
   parentTabgroup__ = "Control";
   newMound();
 }
 
-void onValidClickLoginLoginLogin () {
+void onValidClickLoginLogin () {
   newTab("Control", true);
 }
 
 
 
-void onClickLoginLoginLogin () {
-  showVerifyUserDialog("onValidClickLoginLoginLogin()");
+void onClickLoginLogin () {
+  showVerifyUserDialog("onValidClickLoginLogin()");
 }
 
 
-addOnEvent("Control/Control/Record_New_Mound", "click", "onClickControlControlRecordNewMound()");
-addOnEvent("Login/Login/Log_in", "click", "onClickLoginLoginLogin()");
+addOnEvent("Control/Control/Record_New_Mound", "click", "onClickControlRecordNewMound()");
+addOnEvent("Login/Login/Log_in", "click", "onClickLoginLogin()");
 
 /******************************************************************************/
 /*                   AUDIO, CAMERA, FILE AND VIDEO BINDINGS                   */
