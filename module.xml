@@ -443,7 +443,6 @@
   </Mound>
   <logic><![CDATA[
   <!--@SOURCE: logic/custom-search.bsh-->
-  <!--@SOURCE: logic/custom-validation.bsh-->
   <!--@SOURCE: logic/custom-selectUser.bsh-->
   ]]></logic>
 </module>
