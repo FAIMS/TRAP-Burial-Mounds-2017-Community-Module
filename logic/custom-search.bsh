@@ -1,7 +1,8 @@
 /****************************** SEARCH EXTENSION ******************************/
-/* Implements an extension to the search page which allows users to           */
-/* constrain their searches by current user                                   */
+/* Constrain search to display only records created by current user           */
 /******************************************************************************/
+// Overrides auto-generated definition
+// Restrict search result to records created by current user
 void search(){
   String refEntityList  = "Control/Search/Entity_List";
   String refSearchTerm  = "Control/Search/Search_Term";
