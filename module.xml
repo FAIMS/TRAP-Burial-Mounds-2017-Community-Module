@@ -16,7 +16,8 @@
     </Control>
     <search/>
     <Map f="noscroll">
-      <Map t="map"/>
+      <Map f="nolabel" t="map"/>
+			<Center_Me t="button"/>
     </Map>
   </Control>
   <Mound>
@@ -283,10 +284,23 @@ void showDatabaseLayerByVocabName(String vocabName, int geoColor) {
 }
 
 void initMap() {
-  showDatabaseLayerByVocabName("{Coarseware_pottery}", Color.RED);
-  showDatabaseLayerByVocabName("{Fineware_pottery}",   Color.BLUE);
+  // showBaseMap(MAP_REF, "Base Map", "files/data/R1980_YambolElhovoExt.tif");
+
+  showDatabaseLayerByVocabName("{0___No_observation}", Color.BLUE);
+  showDatabaseLayerByVocabName("{1___pristine__only_superficial_or_minor_damage_}", Color.CYAN);
+  showDatabaseLayerByVocabName("{2___partially_damaged}", Color.GREEN);
+  showDatabaseLayerByVocabName("{3___damaged__up_to_50__volume_missing_or_archaeological_potential_compromised_}", Color.MAGENTA);
+  showDatabaseLayerByVocabName("{4___seriously_damaged___archaeological_potential_seriously_compromised_}", Color.RED);
+  showDatabaseLayerByVocabName("{5___near_extinct}", Color.YELLOW);
+
+  setMapZoom(MAP_REF, 13.0f);
 }
 
 initMap();
+
+void centerMe() { centerOnCurrentPosition(MAP_REF); }
+
+addOnEvent("Control/Map/Center_Me", "click", "centerMe()");
+
   ]]></logic>
 </module>
