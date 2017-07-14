@@ -44,6 +44,7 @@
             </Search>
             <Map>
               <Map/>
+              <Center_Me_1/>
             </Map>
           </Control>
           <Mound>
@@ -186,10 +187,13 @@
         </select1>
       </group>
       <group ref="Map" faims_scrollable="false">
-        <label/>
+        <label>{Map}</label>
         <input faims_map="true" ref="Map">
-          <label>{Map}</label>
+          <label/>
         </input>
+        <trigger ref="Center_Me_1">
+          <label>{Center_Me}</label>
+        </trigger>
       </group>
     </group>
     <group ref="Mound" faims_archent_type="Mound">

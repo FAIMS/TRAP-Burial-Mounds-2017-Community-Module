@@ -17,7 +17,6 @@
     <search/>
     <Map f="noscroll">
       <Map f="nolabel" t="map"/>
-			<Center_Me t="button"/>
     </Map>
   </Control>
   <Mound>
@@ -297,10 +296,6 @@ void initMap() {
 }
 
 initMap();
-
-void centerMe() { centerOnCurrentPosition(MAP_REF); }
-
-addOnEvent("Control/Map/Center_Me", "click", "centerMe()");
 
   ]]></logic>
 </module>

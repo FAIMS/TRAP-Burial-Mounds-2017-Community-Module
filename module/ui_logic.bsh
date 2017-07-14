@@ -1,5 +1,5 @@
 /*
- * GENERATED WITH FAIMS-TOOLS, SHA1: e9f38f9d2d8c056f0606af04608cf6b4078707ca
+ * GENERATED WITH FAIMS-TOOLS, SHA1: 205b7c6feed33d9975eecc17635dbbb5d965a633
  */
 import android.util.Log;
 import android.os.Build.MODEL;
@@ -157,6 +157,7 @@ REF_TO_TYPE.put("Control/Search/Search_Term", "input");
 REF_TO_TYPE.put("Control/Search/Search_Button", "button");
 REF_TO_TYPE.put("Control/Search/Entity_List", "list");
 REF_TO_TYPE.put("Control/Map/Map", "map");
+REF_TO_TYPE.put("Control/Map/Center_Me_1", "button");
 REF_TO_TYPE.put("Mound/Mound_Admin/Mound_author", "input");
 REF_TO_TYPE.put("Mound/Mound_Admin/Mound_timestamp", "input");
 REF_TO_TYPE.put("Mound/Mound_Admin/Mound_ID", "input");
@@ -702,6 +703,7 @@ void makeLocalId(){
       "    id              INTEGER PRIMARY KEY," +
       "    deviceModel     TEXT," +
       "    sessStartMs     INTEGER," +
+      "    parentNameSpace TEXT," +
       "    srcLine         TEXT," +
       "    query           TEXT," +
       "    queryStartMs    INTEGER," +
@@ -956,17 +958,19 @@ TimedFetchCallback(String query, FetchCallback cb, int callerIdx) {
   }
 
   void updatePerfLog() {
-    String deviceModel  = android.os.Build.MODEL;
-    String sessStartMs  = SESS_START_TIME + "";
-    String srcLine      = super.cs_.get(super.callerIdx).getInvocationLine()+"";
-    String query        = super.query;
-    String queryStartMs = super.startTime + "";
-    String queryStopMs  = super.stopTime + "";
+    String deviceModel     = android.os.Build.MODEL;
+    String sessStartMs     = SESS_START_TIME + "";
+    String parentNameSpace = cs_.get(callerIdx + 1).getName() + "";
+    String srcLine         = cs_.get(callerIdx + 0).getInvocationLine() + "";
+    String query           = query;
+    String queryStartMs    = startTime + "";
+    String queryStopMs     = stopTime + "";
 
     String updateQuery = "";
     updateQuery += " INSERT INTO perflog (";
     updateQuery += "             deviceModel,";
     updateQuery += "             sessStartMs,";
+    updateQuery += "             parentNameSpace,";
     updateQuery += "             srcLine,";
     updateQuery += "             query,";
     updateQuery += "             queryStartMs,";
@@ -975,7 +979,7 @@ TimedFetchCallback(String query, FetchCallback cb, int callerIdx) {
     updateQuery += "             numAentvalue,";
     updateQuery += "             numRelationship,";
     updateQuery += "             numAentreln";
-    updateQuery += " )    SELECT %s, %s, %s, %s, %s, %s, a, av, r, ar";
+    updateQuery += " )    SELECT %s, %s, %s, %s, %s, %s, %s, a, av, r, ar";
     updateQuery += "        FROM";
     updateQuery += "             (SELECT COUNT(*) AS a  FROM archentity  ) a,";
     updateQuery += "             (SELECT COUNT(*) AS av FROM aentvalue   ) av,";
@@ -984,6 +988,7 @@ TimedFetchCallback(String query, FetchCallback cb, int callerIdx) {
 
     updateQuery = dbReplaceFirst(updateQuery, deviceModel);
     updateQuery = dbReplaceFirst(updateQuery, sessStartMs);
+    updateQuery = dbReplaceFirst(updateQuery, parentNameSpace);
     updateQuery = dbReplaceFirst(updateQuery, srcLine);
     updateQuery = dbReplaceFirst(updateQuery, query);
     updateQuery = dbReplaceFirst(updateQuery, queryStartMs);
@@ -1852,6 +1857,28 @@ for (entry : REF_TO_TYPE.entrySet()) {
 /******************************************************************************/
 /*                              MENU POPULATION                               */
 /******************************************************************************/
+/* Deprecated: Fetches the contents of a specifed vocabulary and stores it in
+ * the given list.
+ */
+void fetchVocab(String vocabName, List storageList) {
+  fetchVocab(vocabName, storageList, null);
+}
+
+void fetchVocab(String vocabName, List storageList, String callbackFunction) {
+  fetchAll("select vocabid, vocabname from vocabulary left join attributekey using (attributeid) where attributename = '" + vocabName + "';", new FetchCallback() {
+    onFetch(result) {
+      if (isNull(result))
+        result = new ArrayList();
+
+      storageList.addAll(result);
+      Log.d("fetchVocab()", "Fetched vocabulary \"" + vocabname + "\" contents: " + result.toString());
+      if (callbackFunction != null && !isNull(callbackFunction)) {
+        execute(callbackFunction);
+      }
+    }
+  });
+}
+
 /** Wrapper for to make a vocab without an exlusion list **/
 String getMakeVocabType(String ref) {
   if (isHier(ref)) return "hierarchical" + getType(ref);
@@ -2106,7 +2133,7 @@ String getMenuValue(String ref) {
 }
 
 /******************************************************************************/
-/*                                    GPS                                     */
+/*                                  GPS/MAP                                   */
 /******************************************************************************/
 
 
@@ -2172,6 +2199,9 @@ void updateGPSDiagnostics() {
   }
   setFieldValue(diagnosticsRef, status);
 }
+
+void centerMe() { centerOnCurrentPosition("Control/Map/Map"); }
+addOnEvent("Control/Map/Center_Me_1", "click", "centerMe()");
 
 /******************************************************************************/
 /*                                 ACTION BAR                                 */
@@ -3403,11 +3433,20 @@ void showDatabaseLayerByVocabName(String vocabName, int geoColor) {
 }
 
 void initMap() {
-  showDatabaseLayerByVocabName("{Coarseware_pottery}", Color.RED);
-  showDatabaseLayerByVocabName("{Fineware_pottery}",   Color.BLUE);
+  // showBaseMap(MAP_REF, "Base Map", "files/data/R1980_YambolElhovoExt.tif");
+
+  showDatabaseLayerByVocabName("{0___No_observation}", Color.BLUE);
+  showDatabaseLayerByVocabName("{1___pristine__only_superficial_or_minor_damage_}", Color.CYAN);
+  showDatabaseLayerByVocabName("{2___partially_damaged}", Color.GREEN);
+  showDatabaseLayerByVocabName("{3___damaged__up_to_50__volume_missing_or_archaeological_potential_compromised_}", Color.MAGENTA);
+  showDatabaseLayerByVocabName("{4___seriously_damaged___archaeological_potential_seriously_compromised_}", Color.RED);
+  showDatabaseLayerByVocabName("{5___near_extinct}", Color.YELLOW);
+
+  setMapZoom(MAP_REF, 13.0f);
 }
 
 initMap();
+
   
 
 /******************************************************************************/
