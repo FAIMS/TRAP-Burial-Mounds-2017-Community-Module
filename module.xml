@@ -6,13 +6,20 @@
       <Log_in  t="button" ll="Control"/>
       <Sign_up t="button" l="signup"/>
     </Login>
+    <Manual>
+    </Manual>
   </Login>
   <Control f="nodata">
     <Control f="noscroll">
       <Record_New_Mound t="button" f="nocertainty noannotation" l="Mound"/>
       <autonum/>
+      <My_Last_3_Records t="list">
+      </My_Last_3_Records>
     </Control>
     <search/>
+    <Map f="noscroll">
+      <Map t="map"/>
+    </Map>
   </Control>
   <Mound>
     <Mound_Admin>
@@ -26,13 +33,13 @@
       <Mound_ID f="id nocertainty noannotation autonum readonly">
         <str>
           <pos>1</pos>
-          <fmt>$0- </fmt>
+          <fmt>$0-</fmt>
         </str>
       </Mound_ID>
       <Mound_Name f="id">
         <str>
           <pos>2</pos>
-          <fmt>$0- </fmt>
+          <fmt>$0-</fmt>
         </str>
       </Mound_Name>
       <gps f="notnull"/>
@@ -444,5 +451,6 @@
   <logic><![CDATA[
   <!--@SOURCE: logic/custom-search.bsh-->
   <!--@SOURCE: logic/custom-selectUser.bsh-->
+  <!--@SOURCE: logic/show-last-three-records-by-user.bsh-->
   ]]></logic>
 </module>

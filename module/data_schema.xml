@@ -4,12 +4,12 @@
     <description></description>
     <property name="Mound ID" type="measure" isIdentifier="true">
       <description></description>
-      <formatString>$2- </formatString>
+      <formatString>$2-</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
     <property name="Mound Name" type="measure" isIdentifier="true">
       <description></description>
-      <formatString>$2- </formatString>
+      <formatString>$2-</formatString>
       <appendCharacterString> - </appendCharacterString>
     </property>
     <property name="Mound author" type="measure" isIdentifier="true">

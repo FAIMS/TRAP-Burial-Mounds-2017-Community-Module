@@ -25,11 +25,13 @@
               <Signup_Guide_1/>
               <Sign_up/>
             </Login>
+            <Manual/>
           </Login>
           <Control>
             <Control>
               <Record_New_Mound/>
               <Next_Mound_ID/>
+              <My_Last_3_Records/>
             </Control>
             <Search>
               <Colgroup_0>
@@ -42,6 +44,10 @@
               </Colgroup_0>
               <Entity_List/>
             </Search>
+            <Map>
+              <Map/>
+              <Center_Me_1/>
+            </Map>
           </Control>
           <Mound>
             <Mound_Admin>
@@ -145,6 +151,9 @@
           <label>{Sign_up}</label>
         </trigger>
       </group>
+      <group ref="Manual">
+        <label>{Manual}</label>
+      </group>
     </group>
     <group ref="Control">
       <label>{Control}</label>
@@ -156,6 +165,13 @@
         <input ref="Next_Mound_ID" faims_style_class="required">
           <label>{Next_Mound_ID}</label>
         </input>
+        <select1 appearance="compact" ref="My_Last_3_Records">
+          <label>{My_Last_3_Records}</label>
+          <item>
+            <label>Options not loaded</label>
+            <value>Options not loaded</value>
+          </item>
+        </select1>
       </group>
       <group ref="Search" faims_scrollable="false">
         <label>{Search}</label>
@@ -181,6 +197,15 @@
             <value>Options not loaded</value>
           </item>
         </select1>
+      </group>
+      <group ref="Map" faims_scrollable="false">
+        <label>{Map}</label>
+        <input faims_map="true" ref="Map">
+          <label>{Map}</label>
+        </input>
+        <trigger ref="Center_Me_1">
+          <label>{Center_Me}</label>
+        </trigger>
       </group>
     </group>
     <group ref="Mound" faims_archent_type="Mound">
