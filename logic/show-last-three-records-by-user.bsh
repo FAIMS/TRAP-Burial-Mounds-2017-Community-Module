@@ -7,20 +7,13 @@ void populateLastThreeRecord(){
   String refLastThreeRecord = "Control/Control/My_Last_3_Records";
 
   String q = "";
-  /*
+
   q += " SELECT uuid, response";
   q += "   FROM latestNonDeletedArchEntFormattedIdentifiers ";
   q += "   JOIN (SELECT DISTINCT uuid, userid FROM archentity) USING (uuid) ";
   q += "  WHERE userid = {currentUserId} ";
   q += "  ORDER BY uuid DESC";
   q += "  LIMIT 3;";
-  */
-
-  q += " SELECT uuid, response ";
-  q += "  FROM latestNonDeletedArchEntFormattedIdentifiers ";
-  q += "  WHERE CAST(substr(uuid,2,5) AS integer) = {currentUserId} ";
-  q += " ORDER BY uuid DESC ";
-  q += " LIMIT 3;";
 
   q = dbReplaceFirst(q, "{currentUserId}", userid);
 
