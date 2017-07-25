@@ -4,9 +4,9 @@
 // Overrides auto-generated definition
 // Restrict search result to records created by current user
 void search(){
-  String refEntityList  = "Control/Search/Entity_List";
-  String refSearchTerm  = "Control/Search/Search_Term";
-  String refEntityTypes = "Control/Search/Entity_Types";
+  String refEntityList  = "Start/Search/Entity_List";
+  String refSearchTerm  = "Start/Search/Search_Term";
+  String refEntityTypes = "Start/Search/Entity_Types";
   String type = "";
   String term = getFieldValue(refSearchTerm);
   String searchQuery = "SELECT uuid, response "+
@@ -26,7 +26,7 @@ void search(){
   searchQuery = dbReplaceFirst(searchQuery, "{user}", userid);
 
   populateCursorList(refEntityList, searchQuery, 25);
-  refreshTabgroupCSS("Control");
+  refreshTabgroupCSS("Start");
 
   Log.d("Module", "Search query: " + searchQuery);
 }

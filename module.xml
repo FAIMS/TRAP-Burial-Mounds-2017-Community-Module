@@ -1,26 +1,37 @@
 <?xml version="1.0" ?>
 <module>
+
+  <Welcome f="nodata">
+    <Welcome>
+      <Logo t="webview" f="nolabel"/>
+      <Start t="button" l="Login"/>
+    </Welcome>
+  </Welcome>
+
   <Login f="nodata">
     <Login>
       <Users t="dropdown" f="user nocertainty noannotation"/>
-      <Log_in  t="button" ll="Control"/>
+      <Log_in  t="button" ll="Start"/>
       <Sign_up t="button" l="signup"/>
     </Login>
     <Manual>
+      <Manual t="webview" f="nolabel"/>
     </Manual>
   </Login>
-  <Control f="nodata">
-    <Control f="noscroll">
+
+  <Start f="nodata">
+    <Start f="noscroll">
       <Record_New_Mound t="button" f="nocertainty noannotation" l="Mound"/>
       <autonum/>
       <My_Last_3_Records t="list">
       </My_Last_3_Records>
-    </Control>
+    </Start>
     <search/>
     <Map f="noscroll">
       <Map t="map"/>
     </Map>
-  </Control>
+  </Start>
+
   <Mound>
     <Mound_Admin>
       <author f="id nocertainty noannotation">
@@ -448,9 +459,11 @@
       </Associated_features>
     </Condition>
   </Mound>
+
   <logic><![CDATA[
   <!--@SOURCE: logic/custom-search.bsh-->
   <!--@SOURCE: logic/custom-selectUser.bsh-->
   <!--@SOURCE: logic/show-last-three-records-by-user.bsh-->
+  <!--@SOURCE: logic/webview-population.bsh-->
   ]]></logic>
 </module>

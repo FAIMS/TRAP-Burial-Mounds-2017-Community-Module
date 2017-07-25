@@ -18,6 +18,12 @@
             </large>
           </style>
           <!--END: Style-->
+          <Welcome>
+            <Welcome>
+              <Logo/>
+              <Start/>
+            </Welcome>
+          </Welcome>
           <Login>
             <Login>
               <Users/>
@@ -25,14 +31,16 @@
               <Signup_Guide_1/>
               <Sign_up/>
             </Login>
-            <Manual/>
+            <Manual>
+              <Manual/>
+            </Manual>
           </Login>
-          <Control>
-            <Control>
+          <Start>
+            <Start>
               <Record_New_Mound/>
               <Next_Mound_ID/>
               <My_Last_3_Records/>
-            </Control>
+            </Start>
             <Search>
               <Colgroup_0>
                 <Col_0>
@@ -48,7 +56,7 @@
               <Map/>
               <Center_Me_1/>
             </Map>
-          </Control>
+          </Start>
           <Mound>
             <Mound_Admin>
               <Mound_author/>
@@ -99,7 +107,7 @@
           </Mound>
         </faims>
       </instance>
-      <bind nodeset="/faims/Control/Control/Next_Mound_ID" type="decimal"/>
+      <bind nodeset="/faims/Start/Start/Next_Mound_ID" type="decimal"/>
       <bind nodeset="/faims/Mound/Mound_Admin/Maximum_Height_in_m" type="decimal"/>
       <bind nodeset="/faims/Mound/Mound_Admin/Minimum_Height_in_m" type="decimal"/>
       <bind nodeset="/faims/Mound/Mound_Admin/Length" type="decimal"/>
@@ -130,6 +138,18 @@
       </group>
     </group>
     <!--END: Style-->
+    <group ref="Welcome">
+      <label>{Welcome}</label>
+      <group ref="Welcome">
+        <label>{Welcome}</label>
+        <input faims_web="true" ref="Logo">
+          <label/>
+        </input>
+        <trigger ref="Start">
+          <label>{Start}</label>
+        </trigger>
+      </group>
+    </group>
     <group ref="Login">
       <label>{Login}</label>
       <group ref="Login">
@@ -153,12 +173,15 @@
       </group>
       <group ref="Manual">
         <label>{Manual}</label>
+        <input faims_web="true" ref="Manual">
+          <label/>
+        </input>
       </group>
     </group>
-    <group ref="Control">
-      <label>{Control}</label>
-      <group ref="Control" faims_scrollable="false">
-        <label>{Control}</label>
+    <group ref="Start">
+      <label>{Start}</label>
+      <group ref="Start" faims_scrollable="false">
+        <label>{Start}</label>
         <trigger ref="Record_New_Mound">
           <label>{Record_New_Mound}</label>
         </trigger>

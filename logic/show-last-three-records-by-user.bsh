@@ -1,10 +1,10 @@
 /************************** Show Last Three Records ***************************/
 /* List 'My Last 3 Records' display last 3 records created by current user    */
 /******************************************************************************/
-addOnEvent("Control/Control", "show", "populateLastThreeRecord()");
+addOnEvent("Start/Start", "show", "populateLastThreeRecord()");
 
 void populateLastThreeRecord(){
-  String refLastThreeRecord = "Control/Control/My_Last_3_Records";
+  String refLastThreeRecord = "Start/Start/My_Last_3_Records";
 
   String q = "";
 
@@ -25,4 +25,4 @@ void populateLastThreeRecord(){
   Log.d("Module", "Search query: " + q);
 }
 
-addOnEvent("Control/Control/My_Last_3_Records"   , "click" , "loadEntity();");
+addOnEvent("Start/Start/My_Last_3_Records"   , "click" , "loadEntity();");
