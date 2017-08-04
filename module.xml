@@ -3,7 +3,12 @@
 
   <Welcome f="nodata">
     <Welcome>
-      <Logo t="webview" f="nolabel"/>
+      <Logo t="webview" f="nolabel">
+        <markdown>
+          This module was created for the The Tundzha Regional Archaeological Project, based at Macquarie University, Sydney, Australia. The module has been designed to document the current condition and an exact location of burial mounds by broader community in Bulgaria. This module is designed to foster awareness of and community engagement in monitoring cultural heritage in Bulgaria.
+          ![](files/data/gallery/Front_Page_And_Icon/Mound.jpg)
+        </markdown>
+      </Logo>
       <Start t="button" l="Login"/>
     </Welcome>
   </Welcome>
@@ -15,7 +20,13 @@
       <Sign_up t="button" l="signup"/>
     </Login>
     <Manual>
-      <Manual t="webview" f="nolabel"/>
+      <Manual t="webview" f="nolabel">
+        <!--
+        <markdown>
+          ![](files/data/guide/MoundsCommunityManual.html)
+        </markdown>
+      -->
+      </Manual>
     </Manual>
   </Login>
 
@@ -461,9 +472,10 @@
   </Mound>
 
   <logic><![CDATA[
-  <!--@SOURCE: logic/custom-search.bsh-->
-  <!--@SOURCE: logic/custom-selectUser.bsh-->
-  <!--@SOURCE: logic/show-last-three-records-by-user.bsh-->
-  <!--@SOURCE: logic/webview-population.bsh-->
+    <!--@SOURCE: logic/custom-search.bsh-->
+    <!--@SOURCE: logic/custom-selectUser.bsh-->
+    <!--@SOURCE: logic/show-last-three-records-by-user.bsh-->
+    <!--@SOURCE: logic/webview-population.bsh-->
+*/
   ]]></logic>
 </module>
