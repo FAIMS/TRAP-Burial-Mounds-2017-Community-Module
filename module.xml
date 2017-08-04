@@ -476,6 +476,5 @@
     <!--@SOURCE: logic/custom-selectUser.bsh-->
     <!--@SOURCE: logic/show-last-three-records-by-user.bsh-->
     <!--@SOURCE: logic/webview-population.bsh-->
-*/
   ]]></logic>
 </module>

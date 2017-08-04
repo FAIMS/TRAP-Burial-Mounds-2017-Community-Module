@@ -1,13 +1,3 @@
 /***************************** WEBVIEW POPULATION *****************************/
 guideFile = getAttachedFilePath("files/data/guide/MoundsCommunityManual.html");
-
 populateWebView ("Login/Manual/Manual", guideFile);
-/*
-
-String logoText =
-  "<p>This module was created for the The Tundzha Regional Archaeological Project, based at Macquarie University, Sydney, Australia. " +
-  "The module has been designed to document the current condition and an exact location of burial mounds by broader community in Bulgaria. " +
-  "This module is designed to foster awareness of and community engagement in monitoring cultural heritage in Bulgaria.</p>";
-String logo = "<img src=\"files/data/gallery/Front_Page_And_Icon/Mound.jpg\" alt=\"Logo\">" + logoText;
-populateWebViewHtml("Welcome/Welcome/Logo", logo);
-*/
