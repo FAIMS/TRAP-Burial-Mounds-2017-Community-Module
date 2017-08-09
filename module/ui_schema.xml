@@ -59,6 +59,7 @@
           </Start>
           <Mound>
             <Mound_Admin>
+              <Validate/>
               <Mound_author/>
               <Mound_timestamp/>
               <Mound_ID/>
@@ -235,6 +236,9 @@
       <label>{Mound}</label>
       <group ref="Mound_Admin">
         <label>{Mound_Admin}</label>
+        <trigger ref="Validate">
+          <label>{Validate}</label>
+        </trigger>
         <input faims_attribute_name="Mound author" faims_attribute_type="measure" ref="Mound_author" faims_read_only="true">
           <label>{Mound_author}</label>
         </input>

@@ -47,6 +47,7 @@
 
   <Mound>
     <Mound_Admin>
+      <Validate t="button"/>
       <author f="id nocertainty noannotation">
         <str>
           <pos>3</pos>
@@ -481,5 +482,6 @@
     <!--@SOURCE: logic/custom-selectUser.bsh-->
     <!--@SOURCE: logic/show-last-three-records-by-user.bsh-->
     <!--@SOURCE: logic/webview-population.bsh-->
+    <!--@SOURCE: logic/custom-location-for-validation-button.bsh-->
   ]]></logic>
 </module>

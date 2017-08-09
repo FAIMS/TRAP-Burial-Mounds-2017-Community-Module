@@ -1,0 +1,55 @@
+/********************** Custom Location for Valdiate button *****************/
+// Remove Validate button from Navigation drawer and place it as the first item
+// In Burial_Mound/General tab
+addOnEvent("Mound/Mound_Admin/Validate", "click", "validateMound()");
+
+void removeNavigationButtons() {
+  removeNavigationButton("new");
+  removeNavigationButton("duplicate");
+  removeNavigationButton("delete");
+}
+
+void addNavigationButtons(String tabgroup) {
+  removeNavigationButtons();
+  List tabgroupsToValidate = new ArrayList();
+  tabgroupsToValidate.add("Start");
+  tabgroupsToValidate.add("Mound");
+  addNavigationButton("new", new ActionButtonCallback() {
+    actionOnLabel() {
+      "{New}";
+    }
+    actionOn() {
+      if(isNull(getUuid(tabgroup))) {
+        showAlert(
+            "{Warning}",
+            "{The_current_record_has_not_been_saved_yet}",
+            fun2str("newRecord", new Object[]{tabgroup, true}),
+            ""
+        );
+      } else {
+        newRecord(tabgroup, true);
+        showToast("{New_record_created}");
+      }
+    }
+  }, "success");
+  addNavigationButton("duplicate", new ActionButtonCallback() {
+    actionOnLabel() {
+      "{Duplicate}";
+    }
+    actionOn() {
+      if(!isNull(getUuid(tabgroup))) {
+        duplicateRecord(tabgroup);
+      } else {
+        showWarning("{Warning}", "{This_record_is_unsaved_and_cannot_be_duplicated}");
+      }
+    }
+  }, "primary");
+  addNavigationButton("delete", new ActionButtonCallback() {
+    actionOnLabel() {
+      "{Delete}";
+    }
+    actionOn() {
+      deleteRecord(tabgroup);
+    }
+  }, "danger");
+}
