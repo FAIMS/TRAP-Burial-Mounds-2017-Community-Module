@@ -4,10 +4,12 @@
   <Welcome f="nodata">
     <Welcome>
       <Logo t="webview" f="nolabel">
+        <!--
         <markdown>
-          This module was created for the The Tundzha Regional Archaeological Project, based at Macquarie University, Sydney, Australia. The module has been designed to document the current condition and an exact location of burial mounds by broader community in Bulgaria. This module is designed to foster awareness of and community engagement in monitoring cultural heritage in Bulgaria.
+          <p>This module was created for the The Tundzha Regional Archaeological Project, based at Macquarie University, Sydney, Australia. The module has been designed to document the current condition and an exact location of burial mounds by broader community in Bulgaria. This module is designed to foster awareness of and community engagement in monitoring cultural heritage in Bulgaria.</p>
           ![](files/data/gallery/Front_Page_And_Icon/Mound.jpg)
         </markdown>
+      -->
       </Logo>
       <Start t="button" l="Login"/>
     </Welcome>
@@ -215,7 +217,10 @@
                   <p>Other (explain in notes)</p>
                 </div>
                 <div>
-                  <img style="width:100%" src="files/data/gallery/Around_Landuse/Perennial_Roses.JPG" alt="files/data/gallery/Around_Landuse/Other_3276_Overview01_N.JPG"/>
+                  <img style="width:100%" src="files/data/gallery/Around_Landuse/Other_3276_Overview01_N.JPG" alt="files/data/gallery/Top_Landuse/Other_3276_Overview01_N.JPG"/>
+                </div>
+                <div>
+                  <img style="width:100%" src="files/data/gallery/Around_Landuse/Other_Scrub_2102_Overview_S01.JPG" alt="files/data/gallery/Top_Landuse/Other_Scrub_2102_Overview_S01.JPG"/>
                 </div>
                 <hr/>
               </div>

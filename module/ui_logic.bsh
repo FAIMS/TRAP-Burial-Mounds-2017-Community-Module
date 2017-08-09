@@ -3249,7 +3249,6 @@ void incAutoNum(String destPath) {
 /******************************************************************************/
 /*                         POPULATION VIA <MARKDOWN>                          */
 /******************************************************************************/
-populateWebViewHtml("Welcome/Welcome/Logo", "<p>This module was created for the The Tundzha Regional Archaeological Project, based at Macquarie University, Sydney, Australia. The module has been designed to document the current condition and an exact location of burial mounds by broader community in Bulgaria. This module is designed to foster awareness of and community engagement in monitoring cultural heritage in Bulgaria. <img src=\"files/data/gallery/Front_Page_And_Icon/Mound.jpg\" /></p>\n");
 populateWebViewHtml("Login/Login/Signup_Guide_1", "<hr />\n<p>In order to sign up, please ensure:</p>\n<ol style=\"list-style-type: decimal\">\n<li>Your device is online</li>\n<li>FAIMS is connected to the correct server</li>\n<li>You have choosen a strong password</li>\n</ol>\n<p>A strong password has at least 6 characters, 1 uppercase letter, 1 lowercase letter, 1 digit and 1 symbol. Examples of strong passwords:</p>\n<ul>\n<li>Bond@007</li>\n<li>Dig.123</li>\n</ul>\n");
 
 /******************************************************************************/
@@ -3477,6 +3476,18 @@ addOnEvent("Start/Start/My_Last_3_Records"   , "click" , "loadEntity();");
 /***************************** WEBVIEW POPULATION *****************************/
 guideFile = getAttachedFilePath("files/data/guide/MoundsCommunityManual.html");
 populateWebView ("Login/Manual/Manual", guideFile);
+
+/*
+String logoText =
+  "<div><p style=\"text-align:left; font-size:13pt;\">This module was created for the The Tundzha Regional Archaeological Project, based at Macquarie University, Sydney, Australia. " +
+  "The module has been designed to document the current condition and an exact location of burial mounds by broader community in Bulgaria. " +
+  "This module is designed to foster awareness of and community engagement in monitoring cultural heritage in Bulgaria.</p></div>";
+String logo = "<div><img src=\"files/data/gallery/Front_Page_And_Icon/Mound.jpg\" alt=\"Logo\"></div>" + logoText;
+populateWebViewHtml("Welcome/Welcome/Logo", logo);
+
+*/
+welcomeFile = getAttachedFilePath("files/data/welcome_page/welcome.html");
+populateWebView ("Welcome/Welcome/Logo", welcomeFile);
   
 
 /******************************************************************************/
