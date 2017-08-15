@@ -33,6 +33,7 @@
             </Login>
             <Manual>
               <Manual/>
+              <Go_to_Login_Tab/>
             </Manual>
           </Login>
           <Start>
@@ -177,6 +178,9 @@
         <input faims_web="true" ref="Manual">
           <label/>
         </input>
+        <trigger ref="Go_to_Login_Tab">
+          <label>{Go_to_Login_Tab}</label>
+        </trigger>
       </group>
     </group>
     <group ref="Start">

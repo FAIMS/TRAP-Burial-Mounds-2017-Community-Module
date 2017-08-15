@@ -11,7 +11,7 @@
         </markdown>
       -->
       </Logo>
-      <Start t="button" l="Login"/>
+      <Start t="button" l="Login/Manual"/>
     </Welcome>
   </Welcome>
 
@@ -29,6 +29,7 @@
         </markdown>
       -->
       </Manual>
+      <Go_to_Login_Tab t="button" l="Login/Login"/>
     </Manual>
   </Login>
 
