@@ -1,9 +1,10 @@
 /*
- * GENERATED WITH FAIMS-TOOLS, SHA1: fdacd6ccfc8ff72ec3d08ba97885e1dab2b784cc
+ * GENERATED WITH FAIMS-TOOLS, SHA1: ad14a4b50e5dcfaaaa3c3deeaf47717f384e4011
  */
 import android.util.Log;
 import android.os.Build.MODEL;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.Callable;
 
 // Beanshell won't let me write "\0".
 final String SEP = Character.toString ((char) 0);
@@ -166,8 +167,6 @@ String fun2str(String funName, Object args) {
 /* called later on. This is mostly useful for de-spagehettifying calls to     */
 /* `addOnEvent`, which would otherwise effectively use eval.                  */
 /******************************************************************************/
-import java.util.concurrent.Callable;
-
 Map KEY_TO_CALLABLE = new HashMap();
 
 String callable2key(Callable c) {
@@ -237,9 +236,10 @@ REF_TO_TYPE.put("Mound/Mound_Admin/Easting", "input");
 REF_TO_TYPE.put("Mound/Mound_Admin/Accuracy", "input");
 REF_TO_TYPE.put("Mound/Mound_Admin/Take_From_GPS_1", "button");
 REF_TO_TYPE.put("Mound/Mound_Admin/Description_of_mound_or_location", "input");
-REF_TO_TYPE.put("Mound/Mound_Admin/Maximum_Height_in_m", "input");
-REF_TO_TYPE.put("Mound/Mound_Admin/Minimum_Height_in_m", "input");
-REF_TO_TYPE.put("Mound/Mound_Admin/Length", "input");
+REF_TO_TYPE.put("Mound/Mound_Admin/Height_Max", "input");
+REF_TO_TYPE.put("Mound/Mound_Admin/Diameter_Max", "input");
+REF_TO_TYPE.put("Mound/Mound_Admin/Height_Min", "input");
+REF_TO_TYPE.put("Mound/Mound_Admin/Diameter_Min", "input");
 REF_TO_TYPE.put("Mound/Mound_Admin/Width", "input");
 REF_TO_TYPE.put("Mound/Mound_Admin/Image", "camera");
 REF_TO_TYPE.put("Mound/Mound_Admin/Image_Button_1", "button");
@@ -273,9 +273,10 @@ DATA_REFS.add("Mound/Mound_Admin/Northing");
 DATA_REFS.add("Mound/Mound_Admin/Easting");
 DATA_REFS.add("Mound/Mound_Admin/Accuracy");
 DATA_REFS.add("Mound/Mound_Admin/Description_of_mound_or_location");
-DATA_REFS.add("Mound/Mound_Admin/Maximum_Height_in_m");
-DATA_REFS.add("Mound/Mound_Admin/Minimum_Height_in_m");
-DATA_REFS.add("Mound/Mound_Admin/Length");
+DATA_REFS.add("Mound/Mound_Admin/Height_Max");
+DATA_REFS.add("Mound/Mound_Admin/Diameter_Max");
+DATA_REFS.add("Mound/Mound_Admin/Height_Min");
+DATA_REFS.add("Mound/Mound_Admin/Diameter_Min");
 DATA_REFS.add("Mound/Mound_Admin/Width");
 DATA_REFS.add("Mound/Mound_Admin/Image");
 DATA_REFS.add("Mound/Condition/Landuse_around_Mound");
@@ -2667,8 +2668,8 @@ void validateStart() {
 }
 void validateMound() {
   List f = new ArrayList(); // Fields to be validated
-  f.add(fieldPair("Mound/Mound_Admin/Maximum_Height_in_m", "{Maximum_Height__m_}"));
-  f.add(fieldPair("Mound/Mound_Admin/Length", "{Length__m_}"));
+  f.add(fieldPair("Mound/Mound_Admin/Height_Max", "{Height_Max__m_}"));
+  f.add(fieldPair("Mound/Mound_Admin/Diameter_Max", "{Diameter_Max__m_}"));
   f.add(fieldPair("Mound/Condition/Landuse_around_Mound", "{Landuse_around_Mound}"));
   f.add(fieldPair("Mound/Condition/Landuse_on_top_of_Mound", "{Landuse_on_top_of_Mound}"));
   f.add(fieldPair("Mound/Condition/Condition", "{Condition}"));

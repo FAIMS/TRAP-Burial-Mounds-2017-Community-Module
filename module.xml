@@ -70,16 +70,30 @@
       </Mound_Name>
       <gps f="notnull"/>
       <Description_of_mound_or_location/>
-      <Maximum_Height_in_m b="decimal" f="notnull">
-        Maximum Height (m)
-      </Maximum_Height_in_m>
-      <Minimum_Height_in_m b="decimal">
-        Minimum Height (m)
-      </Minimum_Height_in_m>
-      <Length b="decimal" f="notnull">
-        Length (m)
-        <desc>The longest axis in the diameter</desc>
-      </Length>
+      <cols>
+        <col>
+          <Height_Max b="decimal" f="notnull">
+            Height Max (m)
+          </Height_Max>
+          <Diameter_Max   b="decimal" f="notnull">
+            Diameter Max (m)
+            <desc>
+              The longest axis in the diameter
+            </desc>
+          </Diameter_Max>
+        </col>
+        <col>
+          <Height_Min b="decimal">
+            Height Min (m)
+          </Height_Min>
+          <Diameter_Min   b="decimal">
+            Diameter Min (m)
+            <desc>
+              The shorter axis in diameter, if mound ellipsoid
+            </desc>
+          </Diameter_Min>
+        </col>
+      </cols>
       <Width b="decimal">
         Width (m)
         <desc>The shorter axis in diameter, if mound ellipsoid</desc>

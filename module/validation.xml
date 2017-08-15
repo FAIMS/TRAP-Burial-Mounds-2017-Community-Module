@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <ValidationSchema>
   <ArchaeologicalElement name="Mound">
-    <property name="Maximum Height in m">
+    <property name="Height Max">
       <validator type="blankchecker">
         <param type="field" value="measure"/>
       </validator>
     </property>
-    <property name="Length">
+    <property name="Diameter Max">
       <validator type="blankchecker">
         <param type="field" value="measure"/>
       </validator>

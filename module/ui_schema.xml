@@ -86,9 +86,16 @@
               </Colgroup_2>
               <Take_From_GPS_1/>
               <Description_of_mound_or_location/>
-              <Maximum_Height_in_m/>
-              <Minimum_Height_in_m/>
-              <Length/>
+              <Colgroup_3>
+                <Col_1>
+                  <Height_Max/>
+                  <Diameter_Max/>
+                </Col_1>
+                <Col_2>
+                  <Height_Min/>
+                  <Diameter_Min/>
+                </Col_2>
+              </Colgroup_3>
               <Width/>
               <Image/>
               <Image_Button_1/>
@@ -110,9 +117,10 @@
         </faims>
       </instance>
       <bind nodeset="/faims/Start/Start/Next_Mound_ID" type="decimal"/>
-      <bind nodeset="/faims/Mound/Mound_Admin/Maximum_Height_in_m" type="decimal"/>
-      <bind nodeset="/faims/Mound/Mound_Admin/Minimum_Height_in_m" type="decimal"/>
-      <bind nodeset="/faims/Mound/Mound_Admin/Length" type="decimal"/>
+      <bind nodeset="/faims/Mound/Mound_Admin/Colgroup_3/Col_1/Height_Max" type="decimal"/>
+      <bind nodeset="/faims/Mound/Mound_Admin/Colgroup_3/Col_1/Diameter_Max" type="decimal"/>
+      <bind nodeset="/faims/Mound/Mound_Admin/Colgroup_3/Col_2/Height_Min" type="decimal"/>
+      <bind nodeset="/faims/Mound/Mound_Admin/Colgroup_3/Col_2/Diameter_Min" type="decimal"/>
       <bind nodeset="/faims/Mound/Mound_Admin/Width" type="decimal"/>
     </model>
   </h:head>
@@ -297,15 +305,27 @@
         <input faims_attribute_name="Description of mound or location" faims_attribute_type="measure" ref="Description_of_mound_or_location">
           <label>{Description_of_mound_or_location}</label>
         </input>
-        <input faims_attribute_name="Maximum Height in m" faims_attribute_type="measure" ref="Maximum_Height_in_m" faims_style_class="required">
-          <label>{Maximum_Height__m_}</label>
-        </input>
-        <input faims_attribute_name="Minimum Height in m" faims_attribute_type="measure" ref="Minimum_Height_in_m">
-          <label>{Minimum_Height__m_}</label>
-        </input>
-        <input faims_attribute_name="Length" faims_attribute_type="measure" ref="Length" faims_style_class="required">
-          <label>{Length__m_}</label>
-        </input>
+        <group ref="Colgroup_3" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Height Max" faims_attribute_type="measure" ref="Height_Max" faims_style_class="required">
+              <label>{Height_Max__m_}</label>
+            </input>
+            <input faims_attribute_name="Diameter Max" faims_attribute_type="measure" ref="Diameter_Max" faims_style_class="required">
+              <label>{Diameter_Max__m_}</label>
+            </input>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <input faims_attribute_name="Height Min" faims_attribute_type="measure" ref="Height_Min">
+              <label>{Height_Min__m_}</label>
+            </input>
+            <input faims_attribute_name="Diameter Min" faims_attribute_type="measure" ref="Diameter_Min">
+              <label>{Diameter_Min__m_}</label>
+            </input>
+          </group>
+        </group>
         <input faims_attribute_name="Width" faims_attribute_type="measure" ref="Width">
           <label>{Width__m_}</label>
         </input>
