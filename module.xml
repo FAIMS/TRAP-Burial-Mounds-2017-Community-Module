@@ -17,7 +17,7 @@
 
   <Login f="nodata">
     <Login>
-      <Users t="dropdown" f="user nocertainty noannotation"/>
+      <Please_select_a_user t="dropdown" f="user nocertainty noannotation"/>
       <Log_in  t="button" ll="Start"/>
       <Sign_up t="button" l="signup"/>
     </Login>
@@ -94,10 +94,6 @@
           </Diameter_Min>
         </col>
       </cols>
-      <Width b="decimal">
-        Width (m)
-        <desc>The shorter axis in diameter, if mound ellipsoid</desc>
-      </Width>
       <Image t="camera"/>
     </Mound_Admin>
     <Condition>

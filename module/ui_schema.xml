@@ -26,7 +26,7 @@
           </Welcome>
           <Login>
             <Login>
-              <Users/>
+              <Please_select_a_user/>
               <Log_in/>
               <Signup_Guide_1/>
               <Sign_up/>
@@ -96,7 +96,6 @@
                   <Diameter_Min/>
                 </Col_2>
               </Colgroup_3>
-              <Width/>
               <Image/>
               <Image_Button_1/>
             </Mound_Admin>
@@ -121,7 +120,6 @@
       <bind nodeset="/faims/Mound/Mound_Admin/Colgroup_3/Col_1/Diameter_Max" type="decimal"/>
       <bind nodeset="/faims/Mound/Mound_Admin/Colgroup_3/Col_2/Height_Min" type="decimal"/>
       <bind nodeset="/faims/Mound/Mound_Admin/Colgroup_3/Col_2/Diameter_Min" type="decimal"/>
-      <bind nodeset="/faims/Mound/Mound_Admin/Width" type="decimal"/>
     </model>
   </h:head>
   <h:body>
@@ -164,8 +162,8 @@
       <label>{Login}</label>
       <group ref="Login">
         <label>{Login}</label>
-        <select1 ref="Users">
-          <label>{Users}</label>
+        <select1 ref="Please_select_a_user">
+          <label>{Please_select_a_user}</label>
           <item>
             <label>Options not loaded</label>
             <value>Options not loaded</value>
@@ -326,9 +324,6 @@
             </input>
           </group>
         </group>
-        <input faims_attribute_name="Width" faims_attribute_type="measure" ref="Width">
-          <label>{Width__m_}</label>
-        </input>
         <select faims_sync="true" type="camera" faims_attribute_name="Image" faims_attribute_type="measure" ref="Image">
           <label>{Image}</label>
           <item>

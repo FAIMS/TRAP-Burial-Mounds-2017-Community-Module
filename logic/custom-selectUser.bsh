@@ -12,7 +12,6 @@ void selectUser() {
   String password  = getUserMenuValue(4);
   username         = nameFirst + " " + nameLast;
   //Assign user id of current user to the global variable userid
-  userid = userId;
   User user = new User(userId, nameFirst, nameLast, email, password);
   setUser(user);
 }

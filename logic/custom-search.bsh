@@ -23,7 +23,7 @@ void search(){
   searchQuery = dbReplaceFirst(searchQuery, "{term}", term);
   searchQuery = dbReplaceFirst(searchQuery, "{type}", type);
   searchQuery = dbReplaceFirst(searchQuery, "{type}", type);
-  searchQuery = dbReplaceFirst(searchQuery, "{user}", userid);
+  searchQuery = dbReplaceFirst(searchQuery, "{user}", userId);
 
   populateCursorList(refEntityList, searchQuery, 25);
   refreshTabgroupCSS("Start");

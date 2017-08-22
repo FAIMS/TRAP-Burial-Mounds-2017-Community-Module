@@ -15,7 +15,7 @@ void populateLastThreeRecord(){
   q += "  ORDER BY uuid DESC";
   q += "  LIMIT 3;";
 
-  q = dbReplaceFirst(q, "{currentUserId}", userid);
+  q = dbReplaceFirst(q, "{currentUserId}", userId);
 
   fetchAll(q, new FetchCallback() {
     onFetch(result) {
