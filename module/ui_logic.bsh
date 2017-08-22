@@ -1,5 +1,5 @@
 /*
- * GENERATED WITH FAIMS-TOOLS, SHA1: 2471f5c8dce7b93542de81b0608f43fbdc4191f4
+ * GENERATED WITH FAIMS-TOOLS, SHA1: 7ea24bec266e26c86292fb0d82edb654fabc1f67
  */
 import android.util.Log;
 import android.os.Build.MODEL;
