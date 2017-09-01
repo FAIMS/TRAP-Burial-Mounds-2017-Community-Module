@@ -162,7 +162,7 @@
       <label>{Login}</label>
       <group ref="Login">
         <label>{Login}</label>
-        <select1 ref="Please_select_a_user">
+        <select1 ref="Please_select_a_user" faims_annotation="false" faims_certainty="false">
           <label>{Please_select_a_user}</label>
           <item>
             <label>Options not loaded</label>
@@ -193,7 +193,7 @@
       <label>{Start}</label>
       <group ref="Start" faims_scrollable="false">
         <label>{Start}</label>
-        <trigger ref="Record_New_Mound">
+        <trigger ref="Record_New_Mound" faims_annotation="false" faims_certainty="false">
           <label>{Record_New_Mound}</label>
         </trigger>
         <input ref="Next_Mound_ID" faims_style_class="required">
@@ -249,13 +249,13 @@
         <trigger ref="Validate">
           <label>{Validate}</label>
         </trigger>
-        <input faims_attribute_name="Mound author" faims_attribute_type="measure" ref="Mound_author" faims_read_only="true">
+        <input faims_attribute_name="Mound author" faims_attribute_type="measure" ref="Mound_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Mound_author}</label>
         </input>
-        <input faims_attribute_name="Mound timestamp" faims_attribute_type="measure" ref="Mound_timestamp" faims_read_only="true">
+        <input faims_attribute_name="Mound timestamp" faims_attribute_type="measure" ref="Mound_timestamp" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Timestamp}</label>
         </input>
-        <input faims_attribute_name="Mound ID" faims_attribute_type="measure" ref="Mound_ID" faims_read_only="true">
+        <input faims_attribute_name="Mound ID" faims_attribute_type="measure" ref="Mound_ID" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Mound_ID}</label>
         </input>
         <input faims_attribute_name="Mound Name" faims_attribute_type="measure" ref="Mound_Name">
