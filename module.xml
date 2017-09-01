@@ -494,6 +494,5 @@
     <!--@SOURCE: logic/show-last-three-records-by-user.bsh-->
     <!--@SOURCE: logic/webview-population.bsh-->
     <!--@SOURCE: logic/custom-location-for-validation-button.bsh-->
-    <!--@SOURCE: logic/sync-disable.bsh-->
   ]]></logic>
 </module>

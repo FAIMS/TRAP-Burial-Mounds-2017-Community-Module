@@ -1,5 +1,5 @@
 /*
- * GENERATED WITH FAIMS-TOOLS, SHA1: 72e3c444cb2e51af485b5c72a41f3304d57e9fab
+ * GENERATED WITH FAIMS-TOOLS, SHA1: 7ea24bec266e26c86292fb0d82edb654fabc1f67
  */
 import android.util.Log;
 import android.os.Build.MODEL;
@@ -3841,8 +3841,6 @@ void addNavigationButtons(String tabgroup) {
     }
   }, "danger");
 }
-setFileSyncEnabled(false);
-setSyncEnabled    (false);
   
 
 /******************************************************************************/
