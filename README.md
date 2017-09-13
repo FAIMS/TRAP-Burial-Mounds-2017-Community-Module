@@ -17,7 +17,7 @@ FAIMS **v2.5** (Android 6+)
 This module is licensed under an international Creative Commons Attribution 4.0 Licence (**CC BY 4.0**).
 
 ## Access:
-This module is part of the **FAIMS Demo library** on our publicly accessible Demo server (http://demo.fedarch.org/).
+This module is available for download on Google Play (https://play.google.com/store/apps/details?id=au.edu.faims.mq.burialmound&hl=en).
 
 ## This module contains the following FAIMS features: 
 * it is packaged in a standalone APK on Google Play
