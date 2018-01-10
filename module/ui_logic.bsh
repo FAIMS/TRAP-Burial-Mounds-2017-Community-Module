@@ -1280,7 +1280,7 @@ void timedPopulateCursorList(String ref, String q, int limit) {
 }
 
 void setUpTypeHierarchy() {
-  //- 
+  //-
   //  - Mound
 
   n0 = Tree("", 1);
@@ -3841,7 +3841,20 @@ void addNavigationButtons(String tabgroup) {
     }
   }, "danger");
 }
-  
+
+/***************************** GIS Point *****************************/
+void initMap() {
+	isEntity = true;
+	queryName = "Mound";
+	querySQL = "SELECT uuid, aenttimestamp FROM latestNonDeletedArchEnt join aenttype using (aenttypeid) WHERE aenttypename = 'Mound'";
+	ps = createPointStyle(10, Color.BLUE, 0.2f, 0.5f);
+	ls = createLineStyle(10, Color.BLUE, 0.05f, 0.3f, null);
+	pos = createPolygonStyle(10, Color.parseColor("#440000FF"), createLineStyle(10, Color.parseColor("#AA000000"), 0.01f, 0.3f, null));
+	ts = createTextStyle(10, Color.BLUE, 30, Typeface.SANS_SERIF);
+	showDatabaseLayer(MAP_REF, "Mound Layer", isEntity, queryName, querySQL, ps, ls, pos, ts);
+	setMapZoom(MAP_REF, 13.0f);
+}
+initMap();
 
 /******************************************************************************/
 /*                                    INIT                                    */
