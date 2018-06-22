@@ -5,11 +5,8 @@
     <Welcome>
       <Logo t="webview" f="nolabel">
         <!--
-        <markdown>
-          <p>This module was created for the The Tundzha Regional Archaeological Project, based at Macquarie University, Sydney, Australia. The module has been designed to document the current condition and an exact location of burial mounds by broader community in Bulgaria. This module is designed to foster awareness of and community engagement in monitoring cultural heritage in Bulgaria.</p>
-          ![](files/data/gallery/Front_Page_And_Icon/Mound.jpg)
-        </markdown>
-      -->
+        The logic to populate webview for Welcome/Welcome/Logo is located in logic/webview-population.bsh
+        -->
       </Logo>
       <Start t="button" l="Login/Manual"/>
     </Welcome>
@@ -24,10 +21,8 @@
     <Manual>
       <Manual t="webview" f="nolabel">
         <!--
-        <markdown>
-          ![](files/data/guide/MoundsCommunityManual.html)
-        </markdown>
-      -->
+        The logic to populate webview for Login/Manual/Manual is located in logic/webview-population.bsh
+        -->
       </Manual>
       <Go_to_Login_Tab t="button" l="Login/Login"/>
     </Manual>
