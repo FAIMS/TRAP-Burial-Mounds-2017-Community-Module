@@ -55,7 +55,14 @@
             </Search>
             <Map>
               <Map/>
-              <Center_Me_1/>
+              <Colgroup_1>
+                <Col_1>
+                  <Center_Me_1/>
+                </Col_1>
+                <Col_2>
+                  <Save_Map_Settings_1/>
+                </Col_2>
+              </Colgroup_1>
             </Map>
           </Start>
           <Mound>
@@ -162,7 +169,7 @@
       <label>{Login}</label>
       <group ref="Login">
         <label>{Login}</label>
-        <select1 ref="Please_select_a_user">
+        <select1 ref="Please_select_a_user" faims_annotation="false" faims_certainty="false">
           <label>{Please_select_a_user}</label>
           <item>
             <label>Options not loaded</label>
@@ -193,7 +200,7 @@
       <label>{Start}</label>
       <group ref="Start" faims_scrollable="false">
         <label>{Start}</label>
-        <trigger ref="Record_New_Mound">
+        <trigger ref="Record_New_Mound" faims_annotation="false" faims_certainty="false">
           <label>{Record_New_Mound}</label>
         </trigger>
         <input ref="Next_Mound_ID" faims_style_class="required">
@@ -220,7 +227,7 @@
           <group ref="Col_1" faims_style="large">
             <label/>
             <trigger ref="Search_Button">
-              <label>{Search}</label>
+              <label>{Search_Button}</label>
             </trigger>
           </group>
         </group>
@@ -237,9 +244,21 @@
         <input faims_map="true" ref="Map">
           <label>{Map}</label>
         </input>
-        <trigger ref="Center_Me_1">
-          <label>{Center_Me}</label>
-        </trigger>
+        <group ref="Colgroup_1" faims_style="orientation">
+          <label/>
+          <group ref="Col_1" faims_style="even">
+            <label/>
+            <trigger ref="Center_Me_1">
+              <label>{Center_Me_1}</label>
+            </trigger>
+          </group>
+          <group ref="Col_2" faims_style="even">
+            <label/>
+            <trigger ref="Save_Map_Settings_1">
+              <label>{Save_Map_Settings_1}</label>
+            </trigger>
+          </group>
+        </group>
       </group>
     </group>
     <group ref="Mound" faims_archent_type="Mound">
@@ -249,13 +268,13 @@
         <trigger ref="Validate">
           <label>{Validate}</label>
         </trigger>
-        <input faims_attribute_name="Mound author" faims_attribute_type="measure" ref="Mound_author" faims_read_only="true">
+        <input faims_attribute_name="Mound author" faims_attribute_type="measure" ref="Mound_author" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Mound_author}</label>
         </input>
-        <input faims_attribute_name="Mound timestamp" faims_attribute_type="measure" ref="Mound_timestamp" faims_read_only="true">
-          <label>{Timestamp}</label>
+        <input faims_attribute_name="Mound timestamp" faims_attribute_type="measure" ref="Mound_timestamp" faims_read_only="true" faims_annotation="false" faims_certainty="false">
+          <label>{Mound_timestamp}</label>
         </input>
-        <input faims_attribute_name="Mound ID" faims_attribute_type="measure" ref="Mound_ID" faims_read_only="true">
+        <input faims_attribute_name="Mound ID" faims_attribute_type="measure" ref="Mound_ID" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Mound_ID}</label>
         </input>
         <input faims_attribute_name="Mound Name" faims_attribute_type="measure" ref="Mound_Name">
@@ -265,13 +284,13 @@
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
-            <input faims_attribute_name="Latitude" faims_attribute_type="measure" ref="Latitude" faims_read_only="true">
+            <input faims_attribute_name="Latitude" faims_attribute_type="measure" ref="Latitude" faims_style_class="required" faims_read_only="true">
               <label>{Latitude}</label>
             </input>
           </group>
           <group ref="Col_2" faims_style="even">
             <label/>
-            <input faims_attribute_name="Longitude" faims_attribute_type="measure" ref="Longitude" faims_read_only="true">
+            <input faims_attribute_name="Longitude" faims_attribute_type="measure" ref="Longitude" faims_style_class="required" faims_read_only="true">
               <label>{Longitude}</label>
             </input>
           </group>
@@ -280,25 +299,25 @@
           <label/>
           <group ref="Col_1" faims_style="even">
             <label/>
-            <input faims_attribute_name="Northing" faims_attribute_type="measure" ref="Northing" faims_read_only="true">
+            <input faims_attribute_name="Northing" faims_attribute_type="measure" ref="Northing" faims_style_class="required" faims_read_only="true">
               <label>{Northing}</label>
             </input>
           </group>
           <group ref="Col_2" faims_style="even">
             <label/>
-            <input faims_attribute_name="Easting" faims_attribute_type="measure" ref="Easting" faims_read_only="true">
+            <input faims_attribute_name="Easting" faims_attribute_type="measure" ref="Easting" faims_style_class="required" faims_read_only="true">
               <label>{Easting}</label>
             </input>
           </group>
           <group ref="Col_3" faims_style="even">
             <label/>
-            <input faims_attribute_name="Accuracy" faims_attribute_type="measure" ref="Accuracy" faims_read_only="true">
+            <input faims_attribute_name="Accuracy" faims_attribute_type="measure" ref="Accuracy" faims_style_class="required" faims_read_only="true">
               <label>{Accuracy}</label>
             </input>
           </group>
         </group>
         <trigger ref="Take_From_GPS_1">
-          <label>{Take_From_GPS}</label>
+          <label>{Take_From_GPS_1}</label>
         </trigger>
         <input faims_attribute_name="Description of mound or location" faims_attribute_type="measure" ref="Description_of_mound_or_location">
           <label>{Description_of_mound_or_location}</label>
@@ -308,19 +327,19 @@
           <group ref="Col_1" faims_style="even">
             <label/>
             <input faims_attribute_name="Height Max" faims_attribute_type="measure" ref="Height_Max" faims_style_class="required">
-              <label>{Height_Max__m_}</label>
+              <label>{Height_Max}</label>
             </input>
             <input faims_attribute_name="Diameter Max" faims_attribute_type="measure" ref="Diameter_Max" faims_style_class="required">
-              <label>{Diameter_Max__m_}</label>
+              <label>{Diameter_Max}</label>
             </input>
           </group>
           <group ref="Col_2" faims_style="even">
             <label/>
             <input faims_attribute_name="Height Min" faims_attribute_type="measure" ref="Height_Min">
-              <label>{Height_Min__m_}</label>
+              <label>{Height_Min}</label>
             </input>
             <input faims_attribute_name="Diameter Min" faims_attribute_type="measure" ref="Diameter_Min">
-              <label>{Diameter_Min__m_}</label>
+              <label>{Diameter_Min}</label>
             </input>
           </group>
         </group>
@@ -332,7 +351,7 @@
           </item>
         </select>
         <trigger ref="Image_Button_1">
-          <label>{Image}</label>
+          <label>{Image_Button_1}</label>
         </trigger>
       </group>
       <group ref="Condition">
@@ -369,7 +388,7 @@
           </item>
         </select1>
         <select faims_attribute_name="Robbers trenches" faims_attribute_type="vocab" ref="Robbers_trenches">
-          <label>{Robber_s_trenches_}</label>
+          <label>{Robbers_trenches}</label>
           <item>
             <label>Options not loaded</label>
             <value>Options not loaded</value>
@@ -386,7 +405,7 @@
           </item>
         </select>
         <trigger ref="Detail_photo_Button_1">
-          <label>{Detail_photo}</label>
+          <label>{Detail_photo_Button_1}</label>
         </trigger>
         <select faims_attribute_name="Associated material" faims_attribute_type="vocab" ref="Associated_material">
           <label>{Associated_material}</label>

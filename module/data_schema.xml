@@ -357,17 +357,17 @@
       <appendCharacterString> - </appendCharacterString>
       <lookup>
         <term>{0___No_observation}
-<description></description></term>
+<description> </description></term>
         <term>{1___pristine__only_superficial_or_minor_damage_}
-<description></description></term>
+<description> </description></term>
         <term>{2___partially_damaged}
-<description></description></term>
+<description> </description></term>
         <term>{3___damaged__up_to_50__volume_missing_or_archaeological_potential_compromised_}
-<description></description></term>
+<description> </description></term>
         <term>{4___seriously_damaged___archaeological_potential_seriously_compromised_}
-<description></description></term>
+<description> </description></term>
         <term>{5___near_extinct}
-<description></description></term>
+<description> </description></term>
       </lookup>
     </property>
     <property name="Source of Impact" type="vocab">
@@ -376,17 +376,17 @@
       <appendCharacterString> - </appendCharacterString>
       <lookup>
         <term>{Not_available}
-<description></description></term>
+<description> </description></term>
         <term>{Agriculture}
-<description></description></term>
+<description> </description></term>
         <term>{Looting}
-<description></description></term>
+<description> </description></term>
         <term>{Infrastructure__road_on_or_next_to_mound_}
-<description></description></term>
+<description> </description></term>
         <term>{Development__city_growth__road_building_}
-<description></description></term>
+<description> </description></term>
         <term>{Other__specify_in_an_annotation__please_}
-<description></description></term>
+<description> </description></term>
       </lookup>
     </property>
     <property name="Robbers trenches" type="vocab">
@@ -395,15 +395,15 @@
       <appendCharacterString> - </appendCharacterString>
       <lookup>
         <term>{Random}
-<description></description></term>
+<description> </description></term>
         <term>{Rectilinear}
-<description></description></term>
+<description> </description></term>
         <term>{Variable_shapes}
-<description></description></term>
+<description> </description></term>
         <term>{None_present}
-<description></description></term>
+<description> </description></term>
         <term>{Other__specify_in_annotation_}
-<description></description></term>
+<description> </description></term>
       </lookup>
     </property>
     <property name="Notes on Condition" type="measure">
@@ -422,19 +422,19 @@
       <appendCharacterString> - </appendCharacterString>
       <lookup>
         <term>{Fineware_pottery}
-<description></description></term>
+<description> </description></term>
         <term>{Coarseware_pottery}
-<description></description></term>
+<description> </description></term>
         <term>{Flaked_lithic}
-<description></description></term>
+<description> </description></term>
         <term>{Ground_lithic}
-<description></description></term>
+<description> </description></term>
         <term>{Architectural_ceramics_or_building_materials}
-<description></description></term>
+<description> </description></term>
         <term>{Construction_stone}
-<description></description></term>
+<description> </description></term>
         <term>{Other}
-<description></description></term>
+<description> </description></term>
       </lookup>
     </property>
     <property name="Associated features" type="measure">
